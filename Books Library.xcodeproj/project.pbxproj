@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		652EEBF71C51434F0025BE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652EEBF61C51434F0025BE78 /* AppDelegate.swift */; };
-		652EEBF91C51434F0025BE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652EEBF81C51434F0025BE78 /* ViewController.swift */; };
 		652EEBFC1C51434F0025BE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652EEBFA1C51434F0025BE78 /* Main.storyboard */; };
 		652EEBFE1C51434F0025BE78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652EEBFD1C51434F0025BE78 /* Assets.xcassets */; };
 		652EEC011C51434F0025BE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652EEBFF1C51434F0025BE78 /* LaunchScreen.storyboard */; };
@@ -40,12 +39,12 @@
 		652EEC3F1C5143CF0025BE78 /* stone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652EEC231C5143CF0025BE78 /* stone.jpg */; };
 		652EEC401C5143CF0025BE78 /* the-hobbit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652EEC241C5143CF0025BE78 /* the-hobbit.jpg */; };
 		652EEC411C5143CF0025BE78 /* two-towers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652EEC251C5143CF0025BE78 /* two-towers.jpg */; };
+		652EEC431C5145AE0025BE78 /* AuthorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652EEC421C5145AE0025BE78 /* AuthorsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		652EEBF31C51434F0025BE78 /* Books Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Books Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		652EEBF61C51434F0025BE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		652EEBF81C51434F0025BE78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		652EEBFB1C51434F0025BE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		652EEBFD1C51434F0025BE78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		652EEC001C51434F0025BE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		652EEC231C5143CF0025BE78 /* stone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone.jpg; sourceTree = "<group>"; };
 		652EEC241C5143CF0025BE78 /* the-hobbit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-hobbit.jpg"; sourceTree = "<group>"; };
 		652EEC251C5143CF0025BE78 /* two-towers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "two-towers.jpg"; sourceTree = "<group>"; };
+		652EEC421C5145AE0025BE78 /* AuthorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				652EEBF61C51434F0025BE78 /* AppDelegate.swift */,
-				652EEBF81C51434F0025BE78 /* ViewController.swift */,
+				652EEC421C5145AE0025BE78 /* AuthorsTableViewController.swift */,
 				652EEBFA1C51434F0025BE78 /* Main.storyboard */,
 				652EEBFD1C51434F0025BE78 /* Assets.xcassets */,
 				652EEBFF1C51434F0025BE78 /* LaunchScreen.storyboard */,
@@ -264,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				652EEBF91C51434F0025BE78 /* ViewController.swift in Sources */,
+				652EEC431C5145AE0025BE78 /* AuthorsTableViewController.swift in Sources */,
 				652EEBF71C51434F0025BE78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
