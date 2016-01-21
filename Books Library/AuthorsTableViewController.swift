@@ -9,43 +9,44 @@
 import UIKit
 
 class AuthorsTableViewController: UITableViewController {
+    
+    // MARK: - Stored Properties
+    
+    var authors = [AnyObject]()
+    
+    let cellID = "tableViewCellIdentifier"
+    
+    // MARK: - UIViewController Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        guard let validFilePathToResources = NSBundle.mainBundle().pathForResource("Books", ofType: "plist") else { return }
+        self.authors = NSArray(contentsOfFile: validFilePathToResources) as! [AnyObject]
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.authors.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellID, forIndexPath: indexPath)
 
         // Configure the cell...
-
+        
+        if let author = self.authors[indexPath.row] as? [String: AnyObject], let authorName = author["Author"] as? String {
+            cell.textLabel?.text = authorName
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
