@@ -1,34 +1,37 @@
 //
-//  AuthorsTableViewController.swift
+//  BooksTableViewController.swift
 //  Books Library
 //
-//  Created by Yohannes Wijaya on 1/21/16.
+//  Created by Yohannes Wijaya on 1/23/16.
 //  Copyright © 2016 Yohannes Wijaya. All rights reserved.
 //
 
 import UIKit
 
-class AuthorsTableViewController: UITableViewController {
+class BooksTableViewController: UITableViewController {
     
     // MARK: - Stored Properties
     
-    var authors = [AnyObject]()
+    var author: [String: AnyObject]!
+
     
-    let cellID = "authorTableViewCellIdentifier"
+    var books: [AnyObject] {
+        guard let validBooks = author["Books"] as? [AnyObject] else {
+            return [AnyObject]()
+        }
+        return validBooks
+    }
+
+    let cellID = "bookTableViewCellIdentifier"
     
     // MARK: - UIViewController Methods
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let validFilePathToResources = NSBundle.mainBundle().pathForResource("Books", ofType: "plist") else { return }
-        self.authors = NSArray(contentsOfFile: validFilePathToResources) as! [AnyObject]
-        
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
-        
-        self.title = "Authors"
+        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.cellID)
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -36,7 +39,7 @@ class AuthorsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.authors.count
+        return self.books.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -44,9 +47,10 @@ class AuthorsTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        if let author = self.authors[indexPath.row] as? [String: AnyObject], let authorName = author["Author"] as? String {
-            cell.textLabel?.text = authorName
+        if let book = self.books[indexPath.row] as? [String: String], let bookTitle = book["Title"] {
+            cell.textLabel?.text = bookTitle
         }
+
         return cell
     }
 

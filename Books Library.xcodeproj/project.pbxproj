@@ -40,6 +40,7 @@
 		652EEC401C5143CF0025BE78 /* the-hobbit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652EEC241C5143CF0025BE78 /* the-hobbit.jpg */; };
 		652EEC411C5143CF0025BE78 /* two-towers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652EEC251C5143CF0025BE78 /* two-towers.jpg */; };
 		652EEC431C5145AE0025BE78 /* AuthorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652EEC421C5145AE0025BE78 /* AuthorsTableViewController.swift */; };
+		65CA38F31C539DB500F3D0C4 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA38F21C539DB500F3D0C4 /* BooksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		652EEC241C5143CF0025BE78 /* the-hobbit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-hobbit.jpg"; sourceTree = "<group>"; };
 		652EEC251C5143CF0025BE78 /* two-towers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "two-towers.jpg"; sourceTree = "<group>"; };
 		652EEC421C5145AE0025BE78 /* AuthorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorsTableViewController.swift; sourceTree = "<group>"; };
+		65CA38F21C539DB500F3D0C4 /* BooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				652EEBF61C51434F0025BE78 /* AppDelegate.swift */,
 				652EEC421C5145AE0025BE78 /* AuthorsTableViewController.swift */,
+				65CA38F21C539DB500F3D0C4 /* BooksTableViewController.swift */,
 				652EEBFA1C51434F0025BE78 /* Main.storyboard */,
 				652EEBFD1C51434F0025BE78 /* Assets.xcassets */,
 				652EEBFF1C51434F0025BE78 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			files = (
 				652EEC431C5145AE0025BE78 /* AuthorsTableViewController.swift in Sources */,
 				652EEBF71C51434F0025BE78 /* AppDelegate.swift in Sources */,
+				65CA38F31C539DB500F3D0C4 /* BooksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
