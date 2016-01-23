@@ -25,6 +25,8 @@ class AuthorsTableViewController: UITableViewController {
         self.authors = NSArray(contentsOfFile: validFilePathToResources) as! [AnyObject]
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
+        
+        self.title = "Authors"
     }
 
     // MARK: - Table view data source
