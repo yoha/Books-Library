@@ -40,10 +40,45 @@
                             <outlet property="delegate" destination="RfE-V9-pE7" id="LeU-oh-mQG"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Mh2-j3-ayL" kind="show" identifier="BookCoverViewControllerSegue" id="Isc-Dt-pVw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcf-1i-P2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2257" y="496"/>
+        </scene>
+        <!--Book Cover View Controller-->
+        <scene sceneID="E87-E2-jTi">
+            <objects>
+                <viewController id="Mh2-j3-ayL" customClass="BookCoverViewController" customModule="Books_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eqK-RW-Ien"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ZK-fi-7zo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L06-3I-pnI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P3y-Yo-34V">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P3y-Yo-34V" firstAttribute="top" secondItem="L06-3I-pnI" secondAttribute="top" id="APy-Pa-tFM"/>
+                            <constraint firstAttribute="trailing" secondItem="P3y-Yo-34V" secondAttribute="trailing" id="DwB-GX-HvQ"/>
+                            <constraint firstItem="P3y-Yo-34V" firstAttribute="leading" secondItem="L06-3I-pnI" secondAttribute="leading" id="dyf-4p-vGa"/>
+                            <constraint firstItem="5ZK-fi-7zo" firstAttribute="top" secondItem="P3y-Yo-34V" secondAttribute="bottom" id="fOI-1d-B2G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookCoverImageView" destination="P3y-Yo-34V" id="nUG-LA-gYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBt-rO-H4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3103" y="496"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EXB-lv-v3B">

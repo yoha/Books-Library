@@ -22,19 +22,37 @@ class BooksTableViewController: UITableViewController {
         return validBooks
     }
 
-    let cellID = "bookTableViewCellIdentifier"
+    let bookTableViewCellIdentifier = "BookTableViewCellIdentifier"
+    let bookCoverViewControllerSegue = "BookCoverViewControllerSegue"
     
     // MARK: - UIViewController Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.cellID)
+        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.bookTableViewCellIdentifier)
         
         self.title = self.author["Author"] as? String ?? nil
     }
     
-    // MARK: - Table view data source
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.bookCoverViewControllerSegue {
+            if let validIndexPathForSelectedRow = self.tableView.indexPathForSelectedRow, let validBook = self.books[validIndexPathForSelectedRow.row] as? [String: String] {
+                guard let validDestinationVieWController = segue.destinationViewController as? BookCoverViewController else { return }
+                validDestinationVieWController.book = validBook
+            }
+            
+        }
+    }
+    
+    // MARK: - UITableViewDelegate Methods
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(self.bookCoverViewControllerSegue, sender: self)
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    // MARK: - UITableViewDataSource Methods
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -45,7 +63,7 @@ class BooksTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellID, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.bookTableViewCellIdentifier, forIndexPath: indexPath)
 
         // Configure the cell...
         

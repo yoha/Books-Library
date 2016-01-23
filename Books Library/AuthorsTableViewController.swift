@@ -14,16 +14,16 @@ class AuthorsTableViewController: UITableViewController {
     
     var authors = [AnyObject]()
     
-    let authorTableViewCellIdentifier = "authorTableViewCellIdentifier"
+    let authorTableViewCellIdentifier = "AuthorTableViewCellIdentifier"
     let booksTableViewControllerSegue = "BooksTableViewControllerSegue"
     
     // MARK: - UIViewController Methods
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.booksTableViewControllerSegue {
-            if let indexPathForSelectedRow = self.tableView.indexPathForSelectedRow, let author = self.authors[indexPathForSelectedRow.row] as? [String: AnyObject] {
+            if let validIndexPathForSelectedRow = self.tableView.indexPathForSelectedRow, let validAuthor = self.authors[validIndexPathForSelectedRow.row] as? [String: AnyObject] {
                 guard let validDestinationViewController = segue.destinationViewController as? BooksTableViewController else { return }
-                validDestinationViewController.author = author
+                validDestinationViewController.author = validAuthor
             }
         }
     }
