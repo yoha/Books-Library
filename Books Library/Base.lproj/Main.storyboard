@@ -19,10 +19,31 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GEq-NW-yGo"/>
+                    <connections>
+                        <segue destination="RfE-V9-pE7" kind="show" identifier="BooksTableViewControllerSegue" id="0eE-78-nxh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9t-ns-4i9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1430" y="496"/>
+        </scene>
+        <!--Books Table View Controller-->
+        <scene sceneID="z6g-rF-E5m">
+            <objects>
+                <tableViewController id="RfE-V9-pE7" customClass="BooksTableViewController" customModule="Books_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rJW-I4-sdL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="RfE-V9-pE7" id="h2U-DH-DXa"/>
+                            <outlet property="delegate" destination="RfE-V9-pE7" id="LeU-oh-mQG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcf-1i-P2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2257" y="496"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EXB-lv-v3B">

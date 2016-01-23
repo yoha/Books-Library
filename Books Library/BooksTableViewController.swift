@@ -30,6 +30,8 @@ class BooksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.cellID)
+        
+        self.title = self.author["Author"] as? String ?? nil
     }
     
     // MARK: - Table view data source

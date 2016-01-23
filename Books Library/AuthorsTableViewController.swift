@@ -14,9 +14,19 @@ class AuthorsTableViewController: UITableViewController {
     
     var authors = [AnyObject]()
     
-    let cellID = "authorTableViewCellIdentifier"
+    let authorTableViewCellIdentifier = "authorTableViewCellIdentifier"
+    let booksTableViewControllerSegue = "BooksTableViewControllerSegue"
     
     // MARK: - UIViewController Methods
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.booksTableViewControllerSegue {
+            if let indexPathForSelectedRow = self.tableView.indexPathForSelectedRow, let author = self.authors[indexPathForSelectedRow.row] as? [String: AnyObject] {
+                guard let validDestinationViewController = segue.destinationViewController as? BooksTableViewController else { return }
+                validDestinationViewController.author = author
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +34,19 @@ class AuthorsTableViewController: UITableViewController {
         guard let validFilePathToResources = NSBundle.mainBundle().pathForResource("Books", ofType: "plist") else { return }
         self.authors = NSArray(contentsOfFile: validFilePathToResources) as! [AnyObject]
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.authorTableViewCellIdentifier)
         
         self.title = "Authors"
     }
+    
+    // MARK: - UITableViewDelegate Methods
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(self.booksTableViewControllerSegue, sender: self)
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource Methods
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -40,7 +57,7 @@ class AuthorsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellID, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.authorTableViewCellIdentifier, forIndexPath: indexPath)
 
         // Configure the cell...
         
